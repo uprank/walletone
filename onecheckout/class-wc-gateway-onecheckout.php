@@ -3,9 +3,7 @@
 Plugin Name: WooCommerce Onecheckout Gateway 
 Plugin URI: http://woothemes.com/woocommerce
 Description: Extends WooCommerce with an Onecheckout gateway.
-Version: 2.01
-Author: Denys Kanunnikov
-Author URI: http://freelancehunt.com/freelancer/dargentstore.html
+Version: 1.01
 */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -189,7 +187,7 @@ function woocommerce_init() {
 			global $woocommerce;
 			
             $order = new WC_Order( $order_id );
-            $action_adr = "https://merchant.w1.ru/checkout/default.aspx";
+            $action_adr = "https://wl.walletone.com/checkout/checkout/index";
             $result_url = str_replace( 'https:', 'http:', add_query_arg( 'wc-api', 'wc_gateway_onecheckout', home_url( '/' ) ) );
 			
             switch (get_woocommerce_currency()) {
